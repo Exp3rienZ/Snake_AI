@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snake in JS</title>
+        <link type="text/css" rel="stylesheet" href="./ressource/packs/css/wheelcolorpicker.css" />
+        <link type="text/css" rel="stylesheet" href="snake.css">
+        <script type="text/javascript" src="./ressource/packs/jquery-3.6.0.js"></script>
+        <script type="text/javascript" src="./ressource/packs/jquery.wheelcolorpicker.js"></script>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="logo">Snake</div>
+            <div class="menu">
+                <div class="inputs">
+                    <label for="speed" id="speedLabel">Speed: 5</label>
+                    <br>
+                    <input type="range" name="speed" id="speed" min="0" max="10" onchange="changeSpeed(this.value)" oninput="changeSpeed(this.value)"><br>
+                    <label for="size" id="sizeLabel">Size: 15</label><br>
+                    <input type="range" name="size" id="size" min="10" max="30"  value="15" onchange="changeSize(this.value)"><br>
+                    <label for="appleCount" id="appleCountLabel">Apple Count: 1</label><br>
+                    <input type="range" name="appleCount" id="appleCount" min="1" max="5"  value="1" onchange="changeAppleCount(this.value)"><br>
+                    <div class="walkableWallsHelperContainer">
+                        <label for="walls" id="wallsLabel">WalkableWalls:</label>
+                        <input type="checkbox" name="walls" id="walls" onchange="changeWalls()" checked>
+                    </div><br><br>
+                    <label for="snakeColor" id="snakeColorLabel" style="display: inline;">Snake Color:</label>
+                    <div class="colorInputFrame">
+                        <div class="wheel" id="colorInput"></div>
+                        <input type="text" name="snakeColor" id="snakeColor" data-wheelcolorpicker onchange="changeColor(this.value)">
+                    </div>
+                    <div style="height: 10px;"></div>
+                </div>
+                <div class="button" onclick="pressPlay()">
+                    <button class="playbutton" id="playbutton"></button>
+                </div>
+            </div>
+            <div class="gameframe" id="gameframe"></div>
+            <div class="lengthCounter"><h2 id="score">0</h2></div>
+        </div>
+        
+        <script src="snake.js"></script>
+    </body>
+</html>
